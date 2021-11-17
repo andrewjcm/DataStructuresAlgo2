@@ -13,7 +13,7 @@ back to the hub to pick up the final load and repeats the self-adjusting algorit
 ***
 #### B1: Logic Comments
 ***
-    Pseudocode
+Pseudocode
     
     While still packages in truck:
         Get current lococation

@@ -3,13 +3,17 @@ from view.menu import *
 
 
 class MenuController:
-    """"""
+    """Controller for the menu view."""
     def __init__(self):
         self.menu_item = -1
 
     def show(self) -> None:
         """
+        Shows the menu view and runs the set strategy.
 
+        Time-Space: O(n^8) = O(n^7) * O(n)
+
+        :return: None
         """
         # Run the strategy
         strat = NearestNeighbor()

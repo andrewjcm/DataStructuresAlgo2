@@ -2,8 +2,14 @@
 from controller.menu import MenuController
 
 
-def main():
+def main() -> None:
+    """
+    Main method to run entire program from the menu controller.
 
+    Space-Time:
+
+    :return: None
+    """
     menu = MenuController()
     menu.show()
 

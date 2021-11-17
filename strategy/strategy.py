@@ -6,9 +6,7 @@ from model.hashtable import HashTable
 
 
 class Strategy(ABC):
-    """
-    Abstract base class for strategy.
-    """
+    """Abstract base class for strategy."""
 
     map = create_map()
     packages = read_packages_csv()
@@ -17,4 +15,5 @@ class Strategy(ABC):
 
     @abstractmethod
     def execute(self):
+        """Abstract method to execute the Strategy."""
         pass
