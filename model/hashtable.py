@@ -1,3 +1,6 @@
+from model.package import Package
+
+
 class HashTable:
     def __init__(self, max_len: int = 40) -> None:
         """
@@ -10,7 +13,7 @@ class HashTable:
         self.MAX = max_len
         self.table = [[] for _ in range(max_len)]
 
-    def hash_key(self, key: object) -> int:
+    def hash_key(self, key: int) -> int:
         """
         Creates a hashed key.
 
@@ -21,7 +24,7 @@ class HashTable:
         """
         return hash(key) % self.MAX
 
-    def insert(self, key: object, value: object) -> bool:
+    def insert(self, key: int, value: Package) -> bool:
         """
         Inserts an object into the hash table.
 
@@ -39,7 +42,7 @@ class HashTable:
         loc.append([key, value])
         return True
 
-    def get(self, key: object, full_list: bool = False) -> object:
+    def get(self, key: int, full_list: bool = False) -> Package:
         """
         Gets an object stored in the hash table. If full list is True
         get method will return entire chained list at the hash.
@@ -58,7 +61,7 @@ class HashTable:
                 if i[0] == key:
                     return i[1]
 
-    def remove(self, key: object, full_list: object = False) -> None:
+    def remove(self, key: int, full_list: bool = False) -> None:
         """
         Removes a key-value object from the hash table. If full_list is
         True, remove method will remove entire chained list of key-value

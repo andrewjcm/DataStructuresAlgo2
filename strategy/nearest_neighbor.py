@@ -13,7 +13,7 @@ class NearestNeighbor(Strategy):
         """
         This method uses the nearest neighbor algorithm to determine the next package to deliver.
 
-        Space-Time: O(n) = O(n) * O(1)
+        Space-Time: O(n)
 
         :param current_addr: the starting address
         :param remaining_packages: the remaining packages to be delivered
@@ -73,7 +73,7 @@ class NearestNeighbor(Strategy):
         """"
         Executes the Nearest Neighbor algorithm.
 
-        Space-Time: O(n^7) = O(n) * O(n) * O(n) * O(n) * O(n) * O(n) * O(n)
+        Space-Time: O(n^2)
         """
         # Fill Hash Table
         self.fill_hash_table()

@@ -11,7 +11,7 @@ class MenuController:
         """
         Shows the menu view and runs the set strategy.
 
-        Time-Space: O(n^8) = O(n^7) * O(n)
+        Time-Space: O(n^3)
 
         :return: None
         """
@@ -34,5 +34,7 @@ class MenuController:
                     print_package_status(strat.hash_table.get(i + 1), time)
             elif self.menu_item == 3:
                 print_total_mileage(strat.total_distance)
+            elif self.menu_item == 0:
+                print_exiting()
             else:
-                pass
+                print_invalid_selection()

@@ -23,7 +23,8 @@ Pseudocode
 ***
 ### B2: Development Environment
 ***
-This is all my stuff.
+IDE: PyCharm 2021.2.2 (Community Edition)
+Python 3.8.2
 ***
 ### B3: Space-Time and Big-O
 ***
@@ -131,4 +132,25 @@ can expand by number of packages. Worst case scenario, if the hash table was not
 collisions, it would increase time by factor of n.
 ***
 ### K1B: Overhead
+***
+By adding more packages, the space required by the data structure expands linearly.
+***
+### K1C: Implications
+***
+By adding more trucks, the look-up time and space usage of the data structure would not be affected.
+***
+### K2: Other Data Structures
+***
+1) Python's Built-in Hash Table: the dictionary. 
+2) A list.
+***
+### K2A: Data Structure Differences
+***
+1) Python's dictionary, uses a unique hashing system. There are no collisions and is very efficient.
+2) A list could be as efficient if the index is slightly adjusted. For instance, if all IDs for products are unique
+integers, a method could be used to offset the IDs to map each ID to a unique index of the list.
+***
+### L: Sources
+***
+C950 - Webinar-1 - Let's Go Hashing
 ***

@@ -8,7 +8,7 @@ def get_menu_selection() -> int:
     """
     Prints main menu and gets the user's menu selection.
 
-    Space-Time: O(1) -> O(log(n))
+    Space-Time: O(n)
 
     :return: menu selection
     """
@@ -21,6 +21,7 @@ def get_menu_selection() -> int:
     try:
         return int(selection)
     except ValueError:
+        print_invalid_selection()
         return get_menu_selection()
 
 
@@ -28,7 +29,7 @@ def get_selected_package_id() -> int:
     """
     Prints the request for package id and gets package id.
 
-    Space-Time: O(1) -> O(log(n))
+    Space-Time: O(n)
 
     :return: user input
     """
@@ -43,7 +44,7 @@ def get_selected_time() -> datetime.time:
     """
     Prints request for time and gets the time entered.
 
-    Space-Time: O(1) -> O(log(n))
+    Space-Time: O(n)
 
     :return: user input
     """
@@ -99,4 +100,26 @@ def print_total_mileage(mileage: float) -> None:
     :return: None
     """
     print(f"Total mileage: {mileage}")
+
+
+def print_exiting() -> None:
+    """
+    Informs the user that the program is exiting.
+
+    Space-Time: O(1)
+
+    :return: None
+    """
+    print("Exiting...")
+
+
+def print_invalid_selection() -> None:
+    """
+    Informs the user of an invalid selection.
+
+    Space-Time: O(1)
+
+    :return: None
+    """
+    print("Sorry, Buckaroonie! That's not on the menu.")
 

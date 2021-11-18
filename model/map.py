@@ -142,7 +142,7 @@ def create_map() -> Map:
     """
     Creates a full map of all addresses and distances from the csv data.
 
-    Space-Time: O(n) + O(n^2)
+    Space-Time: O(n^2)
 
     :return: a full map of all addresses
     """

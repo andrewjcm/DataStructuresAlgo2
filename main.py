@@ -6,7 +6,7 @@ def main() -> None:
     """
     Main method to run entire program from the menu controller.
 
-    Space-Time:
+    Space-Time: O(n^3)
 
     :return: None
     """
