@@ -71,8 +71,17 @@ def print_package_status(package: Package, time: datetime.time = None) -> None:
     :return: None
     """
     if time:
+        if package.id == 9:
+            addr_update = datetime.strptime("10:20", "%H:%M").time()
+            package.address = "300 State St" if time < addr_update else "410 S State St"
+            package.zip_code = "84103" if time < addr_update else "84111"
         if package.time_delivered.time() > time:
             package.status = "In transit"
+        else:
+            package.status = f"Delivered at {package.time_delivered.time()}"
+    else:
+        package.status = f"Delivered at {package.time_delivered.time()}"
+
     print(package)
 
 

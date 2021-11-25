@@ -84,8 +84,8 @@ class NearestNeighbor(Strategy):
 
         # Manually load the trucks
         load_one = [39, 13, 14, 15, 16, 20, 29, 30, 23, 34, 37, 40, 4, 8, 7, 5]
-        load_two = [1, 31, 3, 6, 18, 25, 28, 32, 36, 38, 19, 21, 10, 27, 26, 9]
-        load_three = [22, 12, 24, 11, 33, 2, 35, 17]
+        load_two = [1, 31, 3, 6, 18, 25, 28, 32, 36, 38, 19, 21, 10, 27, 26, 22]
+        load_three = [9, 12, 24, 11, 33, 2, 35, 17]
 
         t1.load_truck(load_one)
 
@@ -94,16 +94,16 @@ class NearestNeighbor(Strategy):
         # First Truck Deliveries
         self.deliver_packages(t1)
 
-        # Update wrong address
-        wrong_addr_package = self.hash_table.get(9)
-        wrong_addr_package.address = "410 S State St"
-        wrong_addr_package.zip_code = "84111"
-
         # Second Truck Deliveries
         self.deliver_packages(t2)
 
         # Check which truck is closest to the hub and assign it to final_truck
         final_truck = t1 if self.map.vertices[t1.current_loc]["HUB"] < self.map.vertices[t2.current_loc]["HUB"] else t2
+
+        # Update wrong address
+        wrong_addr_package = self.hash_table.get(9)
+        wrong_addr_package.address = "410 S State St"
+        wrong_addr_package.zip_code = "84111"
 
         # Go to the hub
         final_truck.return_to_hub(self.map.vertices[final_truck.current_loc]["HUB"])

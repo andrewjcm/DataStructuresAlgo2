@@ -86,8 +86,10 @@ class Truck:
         :param package: selected package to deliver
         :return: None
         """
-        if package.status[:9] == "Delivered":
+        if package.status == "Delivered":
             raise Exception(f"Package ({package.id}) has already been delivered.")
+        elif package.notes == "Wrong address listed" and self.current_time < datetime.strptime("10:20", "%H:%M"):
+            raise Exception(f"Package ({package.id}) has incorrect address.")
         try:
             package.time_delivered = self.current_time
             self.update_delivery_status(package)
@@ -135,11 +137,4 @@ class Truck:
         :param package: package to update
         :return: None
         """
-        try:
-            deadline = datetime.strptime(package.deadline, "%I:%M %p")
-            if deadline > package.time_delivered:
-                package.status = f"Delivered on time at {package.time_delivered.time()}"
-            else:
-                package.status = f"Delivered LATE at {package.time_delivered.time()}"
-        except ValueError:
-            package.status = f"Delivered on time at {package.time_delivered.time()}"
+        package.status = "Delivered"
